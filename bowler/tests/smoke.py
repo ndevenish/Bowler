@@ -46,7 +46,8 @@ class SmokeTest(TestCase):
             Query(target)
             .select(
                 """
-                power< "print" trailer< "(" args=any* ")" > >
+                power< "print" trailer< "(" args=any* ")" > > |
+                print_stmt< "print" atom< "(" args=any* ")" > >
                 """
             )
             .filter(takes_string_literal)

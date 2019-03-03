@@ -93,7 +93,6 @@ class BowlerTool(RefactoringTool):
         **kwargs,
     ) -> None:
         options = kwargs.pop("options", {})
-        options["print_function"] = True
         super().__init__(fixers, *args, options=options, **kwargs)
         self.queue_count = 0
         self.queue = multiprocessing.JoinableQueue()  # type: ignore
